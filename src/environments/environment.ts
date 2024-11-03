@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiUrl: "http://localhost:8080/products"
+  production: true,
+  apiUrl: "https://api.clement-tell-product-trial.com/products"
 };
