@@ -7,6 +7,7 @@ import {ProductListComponent} from "./products/features/product-list/product-lis
 export const APP_ROUTES: Routes = [
   {
     path: "home",
+    title: 'Accueil',
     component: HomeComponent,
   },
   {
@@ -17,14 +18,17 @@ export const APP_ROUTES: Routes = [
   {
     path: "admin",
     component: ProductListComponent,
+    title: 'Administration',
     data: { isAdmin: true }
   },
   {
     path: "cart",
+    title: 'Panier',
     component: CartComponent,
   },
   {
     path: "contact",
+    title: 'Contact',
     component: ContactComponent,
   },
   { path: "", redirectTo: "home", pathMatch: "full" },

@@ -30,16 +30,16 @@ describe('ContactComponent', () => {
     fixture.detectChanges();
   });
 
-  it('devrait être créé', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 
-  it('devrait initialiser `remainingCharacters` à la valeur maximale quand aucun message n\'est présent', () => {
+  it('should initialize `remainingCharacters` to the maximum value when no message is present', () => {
     const characterCountElement = fixture.debugElement.query(By.css('.character-count')).nativeElement;
     expect(characterCountElement.textContent).toBe(` ${component.maxLength} caractères restants `);
   });
 
-  it('devrait réduire `remainingCharacters` en fonction de la longueur du message', () => {
+  it('should reduce `remainingCharacters` based on the message length', () => {
     const characterCountElement = fixture.debugElement.query(By.css('.character-count')).nativeElement;
     const messageTextarea = fixture.debugElement.query(By.css('textarea')).nativeElement;
 
@@ -50,7 +50,7 @@ describe('ContactComponent', () => {
     expect(characterCountElement.textContent).toBe(` ${component.maxLength - 12} caractères restants `);
   });
 
-  it("devrait désactiver le bouton d'envoi lorsque le mail est invalide", () => {
+  it("should disable the send button when the email is invalid", () => {
     const emailInput = fixture.debugElement.query(By.css('input[type="email"]')).nativeElement;
     const messageTextarea = fixture.debugElement.query(By.css('textarea')).nativeElement;
     const submitButton = fixture.debugElement.query(By.css('p-button')).nativeElement;
@@ -64,7 +64,7 @@ describe('ContactComponent', () => {
     expect(submitButton.classList).toContain('p-disabled');
   });
 
-  it("devrait désactiver le bouton d'envoi lorsque le message est invalide", () => {
+  it("should disable the send button when the message is invalid", () => {
     const emailInput = fixture.debugElement.query(By.css('input[type="email"]')).nativeElement;
     const messageTextarea = fixture.debugElement.query(By.css('textarea')).nativeElement;
     const submitButton = fixture.debugElement.query(By.css('p-button')).nativeElement;
@@ -78,7 +78,7 @@ describe('ContactComponent', () => {
     expect(submitButton.classList).toContain('p-disabled');
   });
 
-  it('devrait activer le bouton d\'envoi lorsque le formulaire est valide', () => {
+  it('should enable the send button when the form is valid', () => {
     const emailInput = fixture.debugElement.query(By.css('input[type="email"]')).nativeElement;
     const messageTextarea = fixture.debugElement.query(By.css('textarea')).nativeElement;
     const submitButton = fixture.debugElement.query(By.css('p-button')).nativeElement;
@@ -93,7 +93,7 @@ describe('ContactComponent', () => {
   });
 
 
-  it('devrait appeler `onSend` et naviguer vers `/home` en affichant un message de succès', fakeAsync(() => {
+  it('should call `onSend` and navigate to `/home` while displaying a success message', fakeAsync(() => {
     const navigateSpy = spyOn(router, 'navigate').and.returnValue(Promise.resolve(true));
     const messageServiceSpy = spyOn(messageService, 'add');
 

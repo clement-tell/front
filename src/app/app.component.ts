@@ -9,13 +9,14 @@ import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {CartService} from "./cart/cart.service";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
   standalone: true,
-  imports: [RouterModule, SplitterModule, ToolbarModule, PanelMenuComponent, ToastModule, ConfirmDialogModule],
+  imports: [RouterModule, SplitterModule, ToolbarModule, PanelMenuComponent, ToastModule, ConfirmDialogModule, NgOptimizedImage],
 })
 export class AppComponent {
 
