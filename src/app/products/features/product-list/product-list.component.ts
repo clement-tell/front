@@ -146,7 +146,8 @@ export class ProductListComponent implements OnInit {
             severity: 'error',
             summary: 'Échec de la suppression !',
             detail: 'Le produit n\'a pas pu être supprimé à cause d\'une erreur interne.'
-          })
+          });
+          window.location.reload();
         });
       }
     });
@@ -163,7 +164,8 @@ export class ProductListComponent implements OnInit {
             severity: 'error',
             summary: 'Échec de la création !',
             detail: 'Le produit n\'a pas pu être créé à cause d\'une erreur interne.'
-          })
+          });
+          window.location.reload();
         });
     } else {
       this.productsService.updateProduct(this.editedProductId!, product).subscribe((product) => {
@@ -175,7 +177,8 @@ export class ProductListComponent implements OnInit {
             severity: 'error',
             summary: 'Échec de la modification !',
             detail: 'Le produit n\'a pas pu être modifié à cause d\'une erreur interne.'
-          })
+          });
+          window.location.reload();
         });
       this.editedProductId = undefined;
     }
